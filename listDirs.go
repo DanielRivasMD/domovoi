@@ -1,0 +1,38 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package domovoi
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import (
+	"os"
+
+	"github.com/DanielRivasMD/horus"
+)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ListDirs returns a slice of names for all subdirectories in the provided directory.
+func ListDirs(directory string) ([]string, error) {
+	entries, err := os.ReadDir(directory)
+	if err != nil {
+		return nil, horus.NewCategorizedHerror(
+			"list directories",
+			"io_error",
+			"failed to list directories",
+			err,
+			map[string]any{"directory": directory},
+		)
+	}
+
+	var dirs []string
+	for _, entry := range entries {
+		if entry.IsDir() {
+			dirs = append(dirs, entry.Name())
+		}
+	}
+
+	return dirs, nil
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
