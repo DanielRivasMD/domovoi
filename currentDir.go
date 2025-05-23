@@ -23,7 +23,7 @@ func CurrentDir() (string, error) {
 			"path_error",
 			"failed to get absolute path of current directory",
 			err,
-			map[string]any{"function": "CurrentDirBase"},
+			map[string]any{"function": "CurrentDir"},
 		)
 	}
 	baseName := filepath.Base(currentDir)
