@@ -13,12 +13,12 @@ import (
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// fileProcessor defines the type for a file processing function.
-type fileProcessor func(string)
+// FileProcessor defines the type for a file processing function.
+type FileProcessor func(string)
 
-// walk returns an fs.WalkDirFunc that applies the given processor function to each non-directory file.
+// Walk returns an fs.WalkDirFunc that applies the given processor function to each non-directory file.
 // Hidden files are ignored, and any encountered errors are wrapped and propagated using Horus.
-func walk(processor fileProcessor) fs.WalkDirFunc {
+func Walk(processor FileProcessor) fs.WalkDirFunc {
 	return func(path string, d fs.DirEntry, err error) error {
 		// If an error occurred while walking this path, wrap and return it.
 		if err != nil {
