@@ -1,5 +1,3 @@
-github.com/DanielRivasMD/horus v0.0.0-20250502212123-e10879ef19ed h1:mRw+CBy3N4sJ/T0v/K/4zTgjP/EZZVHRK1FV2exvDCg=
-github.com/DanielRivasMD/horus v0.0.0-20250502212123-e10879ef19ed/go.mod h1:RxifFjF4J7o+TTS00sIgeWwbvZyQ57L4D2xTlEJle5Y=
 github.com/DanielRivasMD/horus v0.0.0-20250525113757-e56656ee516a h1:4WpAGG+jkZ666CE/esj4PZtM8NHn241VWpf5vUzOOW4=
 github.com/DanielRivasMD/horus v0.0.0-20250525113757-e56656ee516a/go.mod h1:RxifFjF4J7o+TTS00sIgeWwbvZyQ57L4D2xTlEJle5Y=
 github.com/atrox/homedir v1.0.0 h1:99Vwk+XECZTDLaAPeMj7vF9JMNcVarWddqPeyDzJT5E=
@@ -17,6 +15,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
+github.com/ttacon/chalk v0.0.0-20160626202418-22c06c80ed31 h1:OXcKh35JaYsGMRzpvFkLv/MEyPuL49CThT1pZ8aSml4=
+github.com/ttacon/chalk v0.0.0-20160626202418-22c06c80ed31/go.mod h1:onvgF043R+lC5RZ8IT9rBXDaEDnpnw/Cl+HFiw+v/7Q=
 golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.6.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.15.0 h1:h48lPFYpsTvQJZF4EKyI4aLHaev3CxivZmv7yZig9pc=
