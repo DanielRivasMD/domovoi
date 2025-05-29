@@ -9,6 +9,7 @@ import (
 	"os/exec"
 
 	"github.com/DanielRivasMD/horus"
+	"github.com/ttacon/chalk"
 )
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +33,7 @@ func CaptureExecCmd(command string, args ...string) (string, string, error) {
 		return "", "", horus.NewCategorizedHerror(
 			"capture exec command",
 			"command_capture_error",
-			"failed to execute command and capture output",
+			chalk.Red.Color("failed to execute command and capture output"),
 			err,
 			map[string]any{
 				"command": command,
