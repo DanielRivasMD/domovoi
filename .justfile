@@ -43,6 +43,6 @@ build:
 # watch changes
 [group('go')]
 watch:
-  watchexec --clear --watch domovoi.go --watch changeDir.go --watch createDir.go --watch createFile.go --watch currentDir.go --watch findHome.go --watch dirExist.go --watch fileExist.go --watch listDirs.go --watch listFiles.go --watch lineBreak.go --watch recallDir.go -- 'just build'
+  watchexec --clear --watch captureExecCmd.go --watch changeDir.go --watch createDir.go --watch createFile.go --watch currentDir.go --watch dirExist.go --watch domovoi.go --watch ensureDirExist.go --watch execCmd.go --watch fileExist.go --watch findHome.go --watch isHidden.go --watch lineBreak.go --watch listDirs.go --watch listFiles.go --watch recallDir.go --watch walk.go -- 'just build'
 
 ####################################################################################################
