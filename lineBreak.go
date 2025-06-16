@@ -2,20 +2,26 @@
 
 package domovoi
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import (
+	"fmt"
+
 	"github.com/labstack/gommon/color"
 )
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // LineBreaks prints a decorative line break consisting of 100 grey "=" symbols.
-// It uses the labstack/gommon/color package to output colored text.
-// Optionally, a newline can be printed after the break.
-func LineBreaks() {
-	for i := 0; i < 100; i++ {
+// If the optional withNewline argument is true, it will also print a trailing newline.
+// Default behavior (no args or withNewline[0]==false) is to emit no final newline.
+func LineBreaks(withNewline ...bool) {
+	for range [100]struct{}{} {
 		color.Print(color.Grey("=", color.B))
+	}
+	if len(withNewline) > 0 && withNewline[0] {
+		fmt.Println()
 	}
 }
 
