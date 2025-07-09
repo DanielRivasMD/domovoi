@@ -9,27 +9,22 @@ import (
 	"os"
 
 	"github.com/DanielRivasMD/horus"
-	"github.com/ttacon/chalk"
 )
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// ChangeDir changes the current working directory to the specified path and reports errors using horus.
+// ChangeDir attempts to chdir into newDir.
+// On failure it wraps the os.Chdir error with a fresh Herror,
+// tagging it FS_ERROR and recording the target path.
 func ChangeDir(newDir string) error {
-	err := os.Chdir(newDir)
-	if err != nil {
-		// Create a categorized error using horus with a colored message.
-		herr := horus.NewCategorizedHerror(
-			"change directory",
-			"directory_error",
-			chalk.Red.Color(fmt.Sprintf("failed to change directory to '%s'", newDir)),
-			err,
-			map[string]any{"target_directory": newDir},
+	if err := os.Chdir(newDir); err != nil {
+		return horus.PropagateErr(
+			"ChangeDir", // Op
+			"FS_ERROR",  // Category
+			fmt.Sprintf("failed to change directory to %q", newDir), // Message
+			err, // underlying error
+			map[string]any{"target_directory": newDir}, // Details
 		)
-
-		// Optionally, log the error for debugging.
-		fmt.Println(horus.FormatError(herr, horus.JSONFormatter))
-		return herr
 	}
 	return nil
 }
