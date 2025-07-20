@@ -14,10 +14,13 @@ import (
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ReadDir reads the directory named by path and returns
-// a list of directory entries.
-// It prints diagnostic messages and wraps errors with detailed context.
-func ReadDir(path string) ([]os.DirEntry, error) {
-	fmt.Printf("Attempting to read directory: %s\n", path)
+// a list of directory entries. If verbose is true,
+// it prints diagnostic messages before and after the read.
+func ReadDir(path string, verbose bool) ([]os.DirEntry, error) {
+	if verbose {
+		fmt.Printf("Attempting to read directory: %s\n", path)
+	}
+
 	entries, err := os.ReadDir(path)
 	if err != nil {
 		return nil, horus.NewCategorizedHerror(
@@ -28,7 +31,10 @@ func ReadDir(path string) ([]os.DirEntry, error) {
 			map[string]any{"path": path},
 		)
 	}
-	fmt.Printf("Directory successfully read: %s (%d entries)\n", path, len(entries))
+
+	if verbose {
+		fmt.Printf("Directory successfully read: %s (%d entries)\n", path, len(entries))
+	}
 	return entries, nil
 }
 
