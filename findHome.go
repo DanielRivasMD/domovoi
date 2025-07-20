@@ -14,10 +14,13 @@ import (
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // FindHome attempts to retrieve the current user's home directory.
-// It prints diagnostic messages and returns the home directory string.
-// On failure, it returns a wrapped error with detailed diagnostic information.
-func FindHome() (string, error) {
-	fmt.Printf("Attempting to find home directory...\n")
+// If verbose is true it prints diagnostics; otherwise it's silent.
+// On error it returns a categorized *Herror.
+func FindHome(verbose bool) (string, error) {
+	if verbose {
+		fmt.Println("Attempting to find home directory...")
+	}
+
 	home, err := homedir.Dir()
 	if err != nil {
 		return "", horus.NewCategorizedHerror(
@@ -28,7 +31,10 @@ func FindHome() (string, error) {
 			map[string]any{"function": "FindHome"},
 		)
 	}
-	fmt.Printf("Home directory successfully found: %s\n", home)
+
+	if verbose {
+		fmt.Printf("Home directory successfully found: %s\n", home)
+	}
 	return home, nil
 }
 
