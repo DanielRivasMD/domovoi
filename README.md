@@ -4,10 +4,8 @@
 [![go Version](https://img.shields.io/badge/go-VERSION-green.svg)](LURL)
 
 ## Overview
+`domovoi` is a library to handle common IO tasks effortlessly and with versatility
 
-domovoi is a library to handle common IO tasks effortlessly and with versatility.
-
----
 
 ## Features
 - **Effortless IO Operations**: Simplify file handling, data streaming, and other IO tasks.
