@@ -16,9 +16,11 @@ import (
 // RemoveFile returns a NotFoundAction that attempts to delete a file if it exists.
 // If the file is successfully removed (or already missing), it returns (true, nil).
 // Otherwise, it returns (false, error) with detailed diagnostic information.
-func RemoveFile(filePath string) horus.NotFoundAction {
+func RemoveFile(filePath string, verbose bool) horus.NotFoundAction {
 	return func(address string) (bool, error) {
-		fmt.Printf("Attempting to remove file: %s\n", address)
+		if verbose {
+			fmt.Printf("Attempting to remove file: %s\n", address)
+		}
 		err := os.Remove(address)
 		if err != nil {
 			if os.IsNotExist(err) {
@@ -34,7 +36,9 @@ func RemoveFile(filePath string) horus.NotFoundAction {
 				map[string]any{"path": address},
 			)
 		}
-		fmt.Printf("File successfully removed: %s\n", address)
+		if verbose {
+			fmt.Printf("File successfully removed: %s\n", address)
+		}
 		return true, nil
 	}
 }
