@@ -14,7 +14,7 @@ import (
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // CreateDir ensures that the directory at `dir` exists. If `verbose` is true,
-// it prints diagnostic messages before and after checking/creating.
+// it prints diagnostic messages before and after checking / creating.
 // Any errors are wrapped and propagated via horus.
 func CreateDir(dir string, verbose bool) error {
 	if verbose {
@@ -29,7 +29,7 @@ func CreateDir(dir string, verbose bool) error {
 			return false, mkErr
 		}
 		return true, nil
-	}, true)
+	}, verbose)
 	if err != nil {
 		return horus.PropagateErr(
 			"CreateDir",
