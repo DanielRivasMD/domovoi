@@ -25,7 +25,7 @@ func ExampleFileExist_autoCreate() {
 			return false, err
 		}
 		defer f.Close()
-		f.WriteString("# default\n")
+		_, _ = f.WriteString("# default\n")
 		return true, nil
 	}
 
