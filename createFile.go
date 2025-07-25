@@ -16,9 +16,11 @@ import (
 // CreateFile returns a NotFoundAction that attempts to create a file if it doesn't exist.
 // If the file is successfully created, the action returns (true, nil).
 // Otherwise, it returns (false, error) with detailed diagnostic information.
-func CreateFile(filePath string) horus.NotFoundAction {
+func CreateFile(filePath string, verbose bool) horus.NotFoundAction {
 	return func(address string) (bool, error) {
-		fmt.Printf("Attempting to create file: %s\n", address)
+		if verbose {
+			fmt.Printf("Attempting to create file: %s\n", address)
+		}
 		file, err := os.Create(address)
 		if err != nil {
 			return false, horus.NewCategorizedHerror(
@@ -39,7 +41,9 @@ func CreateFile(filePath string) horus.NotFoundAction {
 				map[string]any{"path": address},
 			)
 		}
-		fmt.Printf("File successfully created: %s\n", address)
+		if verbose {
+			fmt.Printf("File successfully created: %s\n", address)
+		}
 		return true, nil
 	}
 }
