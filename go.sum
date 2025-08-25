@@ -1,9 +1,5 @@
-github.com/DanielRivasMD/horus v0.0.0-20250525113757-e56656ee516a h1:4WpAGG+jkZ666CE/esj4PZtM8NHn241VWpf5vUzOOW4=
-github.com/DanielRivasMD/horus v0.0.0-20250525113757-e56656ee516a/go.mod h1:RxifFjF4J7o+TTS00sIgeWwbvZyQ57L4D2xTlEJle5Y=
 github.com/DanielRivasMD/horus v0.0.0-20250709022859-36093683a815 h1:KUPFZKMwHTslLYeMTO13hDEzQlEdwQ9GWfGwmaFKzlE=
 github.com/DanielRivasMD/horus v0.0.0-20250709022859-36093683a815/go.mod h1:BisGQ8GHkm7XjzTnXRhGznkg9wFaCHiIQXroK3vhKu8=
-github.com/DanielRivasMD/horus v1.0.0 h1:NFSFxWKxM0VM5UB503YZz1mj3ewjau4UeMuDv0AtQ+E=
-github.com/DanielRivasMD/horus v1.0.0/go.mod h1:BisGQ8GHkm7XjzTnXRhGznkg9wFaCHiIQXroK3vhKu8=
 github.com/atrox/homedir v1.0.0 h1:99Vwk+XECZTDLaAPeMj7vF9JMNcVarWddqPeyDzJT5E=
 github.com/atrox/homedir v1.0.0/go.mod h1:ZKVEIDNKscX8qV1TyrwLP+ayjv3XQO7wbVmc5EW00A8=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
