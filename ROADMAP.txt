@@ -1,3 +1,6 @@
 - add verbose to functions => now functions auto-log
 - include examples to be parsed by `go doc`
 - update apis to not error out all the time
+
+==================================================
+==================================================

@@ -15,7 +15,7 @@ import (
 
 // CreateDir ensures that the directory at `dir` exists. If `verbose` is true,
 // it prints diagnostic messages before and after checking / creating.
-// Any errors are wrapped and propagated via horus.
+// Any errors are wrapped and propagated via horus
 func CreateDir(dir string, verbose bool) error {
 	if verbose {
 		fmt.Printf("Ensuring directory exists: %s\n", dir)
